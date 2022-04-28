@@ -3,7 +3,6 @@ package test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.function.context.MessageRoutingCallback;
 import org.springframework.context.annotation.Bean;
 
 import org.springframework.messaging.Message;
@@ -11,6 +10,10 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.util.MultiValueMap;
 import reactor.core.publisher.Flux;
 
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -21,8 +24,11 @@ import java.util.function.Supplier;
 @SpringBootApplication(proxyBeanMethods = false)
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IntrospectionException {
+
         SpringApplication.run(Application.class, args);
+
+
     }
 
 //    @Bean
