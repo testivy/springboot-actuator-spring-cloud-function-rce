@@ -91,7 +91,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <fork>false</fork><!--这里注意这里必须是 false 调试-->
+                    <fork>false</fork>
                 </configuration>
             </plugin>
         </plugins>
