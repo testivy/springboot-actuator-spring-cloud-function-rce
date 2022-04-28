@@ -25,7 +25,14 @@ Host: 127.0.0.1:9000
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0
 ```
 
+```
+POST /functionRouter/qqq HTTP/1.1
+Host: 127.0.0.1:9000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0
 
+aaa
+```
+![](.README_images/cfa3c05a.png)
 
 # 基于Spring boot actuator的Spring-Cloud-Function SPEL注入
 - Spring Coud Function 官方在最新版本3.2.3 已经修复了之前的commit为dc5128b 的SPEL注入漏洞。但笔者发现配置文件中的spring.cloud.function.routingExpression参数也存在SPEL注入点，因此理论上只要能够控制functionProperties.getRoutingExpression() 的值就能够触发这个漏洞。
